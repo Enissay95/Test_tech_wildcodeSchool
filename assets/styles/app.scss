@@ -1,0 +1,21 @@
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "nav.scss";
+@import "footer.scss";
+
+
+body {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+form .supprimer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+}

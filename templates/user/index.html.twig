@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Les Argonautes!{% endblock %}
+
+{% block body %}
+
+
+<table class="table caption-top mt-5">
+  <thead>
+    <tr>
+      <th colspan="3">Liste des argonautes</th>
+    </tr>
+  </thead>  
+
+  <tbody>
+    <tr>
+  {% for user in users %}
+    {% if loop.index0 is divisible by(3) %}
+      </tr>
+      <tr>
+    {% endif %}
+    <td>
+      {{ user.name }}
+      <div class='d-flex'>
+        <div class='delete'> {{ include('user/_delete_form.html.twig') }} </div>
+        <div class='edit mt-2 mx-5' > <a class="btn btn-primary" href="{{ path('app_edit', {'id': user.id}) }}">edit</a> </div> 
+      </div>   
+    </td>
+
+   {% if loop.last %}
+    </tr>
+   {% endif %}
+
+  {% endfor %}
+  </tbody>
+</table>
+
+  <div class="d-grid gap-2 col-3 mx-auto mt-5">
+    <a class="btn btn-secondary" href="{{ path('app_add') }}" >Create new</a>
+  </div>
+
+{% endblock %}

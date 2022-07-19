@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+
+    <div class="row d-grid gap-2 col-3 mx-auto mt-5">
+      <i class="fa fa-calendar"></i> 
+    
+      {{ form_widget(form.name) }}
+
+      <small>{{ form_help(form.name) }}</small>
+
+    </div>
+    <button class="btn btn-success d-grid gap-2 col-1 mx-auto mt-5">{{ button_label|default('Save') }}</button>
+
+{{ form_end(form) }}
+
+
